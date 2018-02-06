@@ -50,7 +50,7 @@ var myPlayList = [
 // DOCUMENT READY FUNCTION
 $( document ).ready(function() {
   
-
+$().append();
 displayList();
 clearList();
 });
@@ -58,21 +58,22 @@ clearList();
 function displayList(){
 $('body').append("<p>title: " + mySong.title + "</p>");
 $('body').append("<p>artist: " + mySong.artist + "</p>");
-$('body').append("<p>address: " + mySong.mp3url + "</p>");
-$('body').append("<img src="+mySong.imageurl+">");
+$('body').append("<p> address: "+"<a href="+ mySong.mp3url +">"+ mySong.mp3url+ "</a>"+"</p>");
+$('body').append("<img class="+"img"+" src="+mySong.imageurl+">");
 
   
 }
 
 function clearList(){
   
-for(var i=0;i < myPlayList ; i++){
-
-$('body').append("<p>title: " + myPlayList.title + "</p>");
-$('body').append("<p>artist: " + myPlayList.artist + "</p>");
-$('body').append("<p>address: " + myPlayList.mp3url + "</p>");
-$('body').append("<img src="+ myPlayList.imageurl+">");
-}  
+	for(var i=0;i < myPlayList.length ; i++
+		){
+		
+		$('body').append("<p>title: "+myPlayList[i].title);
+		$('body').append("<p>artist: "+myPlayList[i].artist);
+		$('body').append("<p>address: "+"<a href="+myPlayList[i].mp3url+">"+myPlayList[i].mp3url+"<a>");
+		$('body').append("<img class="+"'img'"+ "src="+myPlayList[i].imageurl+">");
+	}  
   
 }
 
