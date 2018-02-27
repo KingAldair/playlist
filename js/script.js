@@ -21,7 +21,7 @@ var mySong = {
 	"artist":"Bruno Mars",
 	"mp3url":"https://open.spotify.com/track/6b8Be6ljOzmkOmFslEb23P",
 	"imageurl":"https://images-na.ssl-images-amazon.com/images/I/71Gr9aCHQfL._SY355_.jpg",
-}
+};
 
 var myPlayList = [
 	{
@@ -43,7 +43,7 @@ var myPlayList = [
 		"imageurl":"http://assets-s3.usmagazine.com/uploads/assets/articles/93827-justin-biebers-sorry-choreographer-spills-video-style-secrets-parris-goebel/1445638548_justin-bieber-sorry-dancers-zoom.jpg",
 	}
 
-]
+];
 
 
 
@@ -61,12 +61,7 @@ $('body').append("<p>artist: " + mySong.artist + "</p>");
 $('body').append("<p> address: "+"<a href="+ mySong.mp3url +">"+ mySong.mp3url+ "</a>"+"</p>");
 $('body').append("<img class="+"img"+" src="+mySong.imageurl+">");
 
-  
-}
-
-function clearList(){
-  
-	for(var i=0;i < myPlayList.length ; i++
+for(var i=0;i < myPlayList.length ; i++
 		){
 		
 		$('body').append("<p>title: "+myPlayList[i].title);
@@ -74,11 +69,28 @@ function clearList(){
 		$('body').append("<p>address: "+"<a href="+myPlayList[i].mp3url+">"+myPlayList[i].mp3url+"<a>");
 		$('body').append("<img class="+"'img'"+ "src="+myPlayList[i].imageurl+">");
 	}  
+}
+
+function clearList(){
+  
+	  
   
 }
 
 function addSong(){
  
-  
-  
+  var title1=$("#one").val();
+	var artist1=$("#two").val();
+	var addres1=$("#three").val();
+	var urlimg1=$("#four").val();
+	
+	var song= {
+		"title" : title1,
+		"artist" : artist1,
+		"mp3url":addres1,
+		"urlimg":urlimg1,
+	};
+	console.log(song);
+  myPlayList.push(song);
 }
+
